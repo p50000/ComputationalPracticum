@@ -42,7 +42,7 @@ public abstract class SolutionProducer {
         return (1 + y/x) * Math.log(1 + y/x) + y/x;
     };
 
-    protected void fillXSeries(int n, double x0, double h) throws Exception {
+    protected final void fillXSeries(int n, double x0, double h) throws Exception {
         if (h > ONE) {
             throw new Exception(BIG_STEP_EXCEPTION);
         }

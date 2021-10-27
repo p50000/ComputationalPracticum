@@ -5,7 +5,7 @@ public class AnalyticalSolutionProducer extends SolutionProducer {
 
     protected double constant;
 
-    protected Double calculateConstant() throws Exception {
+    protected final Double calculateConstant() throws Exception {
         if (x0 * y0 < 0 && Math.abs(y0) >= Math.abs(x0)) {
             throw new Exception(NO_SOLUTION);
         }
@@ -20,7 +20,7 @@ public class AnalyticalSolutionProducer extends SolutionProducer {
     }
 
     @Override
-    protected void calculateYSeries(int n, double y0, double h) throws Exception {
+    protected  final void calculateYSeries(int n, double y0, double h) throws Exception {
         constant = calculateConstant();
         ySeries.add(y0);
         for (int i = 1; i < n + 1; i++) {
